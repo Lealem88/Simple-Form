@@ -32,3 +32,20 @@
 
         h2 {
             text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
