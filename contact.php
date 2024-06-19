@@ -49,3 +49,20 @@
             border-radius: 10px;
             border: none;
             outline: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            box-shadow: 0 0 10px #00f7ff;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
