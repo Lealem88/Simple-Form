@@ -83,3 +83,20 @@
             cursor: pointer;
             transition: 0.3s;
         }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00f7ff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Contact Us</h2>
+
+    <form method="POST" action="process_contact.php">
+
+        <label>Full Name</label>
