@@ -117,3 +117,17 @@
             <input type="radio" name="source" value="Internet"> Internet
             <input type="radio" name="source" value="Advertisement"> Advertisement
         </div>
+
+        <label>Preferred Contact Method</label>
+        <div class="options">
+            <input type="checkbox" name="contact_method[]" value="Email"> Email
+            <input type="checkbox" name="contact_method[]" value="Phone"> Phone
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+
+    </form>
+</div>
+
+</body>
+</html>
