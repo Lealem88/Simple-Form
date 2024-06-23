@@ -100,3 +100,20 @@
     <form method="POST" action="process_contact.php">
 
         <label>Full Name</label>
+        <input type="text" name="fullname" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+
+        <label>Subject</label>
+        <input type="text" name="subject" required>
+
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+
+        <label>How did you hear about us?</label>
+        <div class="options">
+            <input type="radio" name="source" value="Friend" required> Friend
+            <input type="radio" name="source" value="Internet"> Internet
+            <input type="radio" name="source" value="Advertisement"> Advertisement
+        </div>
