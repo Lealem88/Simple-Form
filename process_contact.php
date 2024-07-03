@@ -15,3 +15,20 @@
             align-items: center;
             color: white;
         }
+
+        .container {
+            width: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h3 { text-align: center; margin-top: 0; }
+        .error { color: #ff6b6b; }
+        .success { color: #4dff88; }
+        .info-label { font-weight: bold; color: #ddd; }
+        p { margin: 10px 0; line-height: 1.4; }
+        .divider { border-top: 1px solid rgba(255, 255, 255, 0.2); margin: 15px 0; }
