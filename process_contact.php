@@ -32,3 +32,20 @@
         .info-label { font-weight: bold; color: #ddd; }
         p { margin: 10px 0; line-height: 1.4; }
         .divider { border-top: 1px solid rgba(255, 255, 255, 0.2); margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<?php
+// Database Configuration
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "contact_db";
+
+// Create Connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check Connection
+if ($conn->connect_error) {
