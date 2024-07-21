@@ -49,3 +49,20 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check Connection
 if ($conn->connect_error) {
+    die("<h3 class='error'>Connection failed</h3><p>" . $conn->connect_error . "</p>");
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and collect inputs
+    $fullname = $_POST['fullname'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $subject = $_POST['subject'] ?? '';
+    $message = $_POST['message'] ?? '';
+    $source = $_POST['source'] ?? 'Not specified';
+    $contact_array = isset($_POST['contact_method']) ? $_POST['contact_method'] : [];
+    
+    // Combine array into a string for storage
+    $contact_methods_str = !empty($contact_array) ? implode(", ", $contact_array) : 'None';
+
+    $errors = [];
+
