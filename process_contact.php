@@ -66,3 +66,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $errors = [];
 
+    // Basic Validation
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format.";
+    }
+    if (empty($subject)) {
+        $errors[] = "Subject cannot be empty.";
+    }
+    if (strlen($message) < 10) {
+        $errors[] = "Message must be at least 10 characters.";
+    }
+
+    if (!empty($errors)) {
+        echo "<h3 class='error'>Validation Errors</h3>";
+        foreach ($errors as $e) {
+            echo "<p class='error'>• $e</p>";
+        }
+    } else {
