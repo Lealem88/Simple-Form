@@ -83,3 +83,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<p class='error'>• $e</p>";
         }
     } else {
+        // Use Prepared Statements for security
+        $stmt = $conn->prepare("INSERT INTO contacts (fullname, email, subject, message, source, contact_method) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $fullname, $email, $subject, $message, $source, $contact_methods_str);
+
+        if ($stmt->execute()) {
+            echo "<h3 class='success'>Message Sent Successfully!</h3>";
+            echo "<p><span class='info-label'>Name:</span> $fullname</p>";
+            echo "<p><span class='info-label'>Email:</span> $email</p>";
+            echo "<p><span class='info-label'>Subject:</span> $subject</p>";
+            
+            echo "<div class='divider'></div>";
+            
+            echo "<p><span class='info-label'>Message:</span><br>$message</p>";
+            echo "<p><span class='info-label'>Source:</span> $source</p>";
+            echo "<p><span class='info-label'>Preferred Contact:</span> $contact_methods_str</p>";
+        } else {
+            echo "<h3 class='error'>Database Error</h3>";
