@@ -100,3 +100,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<p><span class='info-label'>Preferred Contact:</span> $contact_methods_str</p>";
         } else {
             echo "<h3 class='error'>Database Error</h3>";
+            echo "<p>Could not save data: " . $stmt->error . "</p>";
+        }
+        $stmt->close();
+    }
+} else {
+    echo "<h3>Invalid Request</h3>";
+}
+
+$conn->close();
+?>
+</div>
+
+</body>
+</html>
